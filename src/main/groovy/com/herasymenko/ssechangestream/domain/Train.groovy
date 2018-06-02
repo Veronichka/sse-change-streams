@@ -32,7 +32,7 @@ class Train {
     Long version
 
     /**
-     * The train unique identifier - its number.
+     * The train unique identifier - it's number.
      */
     @Indexed
     @Field( FieldNames.TRAIN_NUMBER )
