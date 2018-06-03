@@ -36,4 +36,13 @@ class Application {
     SubscriptionPort subscriptionPort( ThreadPoolTaskExecutor taskExecutor, ChangesPort changesPort, TrainRepository trainRepository ) {
         new SubscriptionHandler( taskExecutor, changesPort, trainRepository )
     }
+
+    @Bean
+    ThreadPoolTaskExecutor taskExecutor() {
+        new ThreadPoolTaskExecutor().with {
+            corePoolSize = 5
+            maxPoolSize = 10
+            it
+        }
+    }
 }

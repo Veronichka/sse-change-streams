@@ -1,5 +1,6 @@
 package com.herasymenko.ssechangestream
 
+import com.fasterxml.jackson.databind.ObjectMapper
 import com.herasymenko.ssechangestream.inbound.database.ChangesPort
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -19,6 +20,9 @@ class BaseIntegrationTest extends Specification {
 
     @Autowired
     protected ChangesPort changesPort
+
+    @Autowired
+    protected ObjectMapper objectMapper
 
     void setup() {
         assert mongoTemplate
